@@ -12,7 +12,7 @@ def pre_process(txt):
     # Set text to lowercase and removing leading and tracing whitespaces
     txt = str(txt).lower().strip()
     # Replace currencies,characters and contractions to be more uniform
-    with open('replacechars.json', 'r') as JSON:
+    with open('data/replacechars.json', 'r') as JSON:
         json_dict = json.load(JSON)
     text = replace_all(txt, json_dict)
     text = re.sub(r'([0-9]+)000000000', r'\1b', text)
@@ -36,7 +36,7 @@ def load_data(filename, preprocess):
 
 # Perform (partial) string matching by checking equality of the strings and is one is a substring of the other.
 def string_matching():
-    df = load_data('Test set.csv', False)
+    df = load_data('data/Test set.csv', False)
     df['is_duplicate'] = ((df['question1'] == df['question2']) | df['question1'].isin(df['question2']) | df['question2'].isin(df['question1'])).astype(int)
     df['is_duplicate'].to_csv('string_match.csv')
 
@@ -52,14 +52,14 @@ def word_count(entry):
 # Random Forest Classifier
 def rf_duplicate_questions():
     # training set
-    df_train = load_data('Development set.csv', True)
+    df_train = load_data('data/Development set.csv', True)
     df_train[['common', 'total', 'shared']] = df_train.apply(word_count, axis=1, result_type='expand')
     df_train = df_train.drop(columns=['question1', 'question2'])
     x_train = df_train.iloc[:, 1:].values
     y_train = df_train.iloc[:, 0].values  # is_duplicated
 
     # test set
-    df_test = load_data('Test set.csv', True)
+    df_test = load_data('data/Test set.csv', True)
     df_test[['common', 'total', 'shared']] = df_test.apply(word_count, axis=1, result_type='expand')
     df_test = df_test.drop(columns=['question1', 'question2', '?'])
     x_test = df_test.values
