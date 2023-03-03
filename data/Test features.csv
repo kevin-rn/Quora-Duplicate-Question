@@ -11842,6 +11842,7 @@ id,question1,question2,q1_len,q2_len,diff,q1_char,q2_char,common,avg_len,q1_word
 201838,function parotid gland,function parathyroid gland,22.0,26.0,4.0,14.0,16.0,2.0,3.0,3.0,3.0,88,88,77,88,88,100,86
 201839,indian adaptation hawaii five set kerala,north indians try beef come kerala people kerala enjoy beef matter religion belong,40.0,82.0,42.0,17.0,21.0,1.0,8.5,6.0,13.0,28,86,42,40,36,100,55
 201840,control anger,control emotions anger,13.0,22.0,9.0,10.0,13.0,2.0,2.5,2.0,3.0,74,86,69,100,74,100,100
+201841,create android app,nan,18.0,3.0,15.0,11.0,2.0,0.0,2.0,3.0,1.0,19,60,67,19,19,67,67
 201842,qualitative observation,meant qualitative quantitative research,23.0,39.0,16.0,14.0,15.0,1.0,3.0,2.0,4.0,48,86,65,65,48,100,65
 201843,leopards communicate,feed mealworms leopard gecko,20.0,28.0,8.0,15.0,15.0,0.0,3.0,2.0,4.0,42,44,61,46,46,50,50
 201844,get lean body,get stiff lean body,13.0,19.0,6.0,11.0,14.0,3.0,3.5,3.0,4.0,81,95,77,100,81,100,100
